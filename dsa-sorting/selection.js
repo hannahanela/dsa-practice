@@ -37,3 +37,5 @@ function selectionSort(arr) {
 
  return sortedArr;
 }
+
+module.exports = selectionSort ;
