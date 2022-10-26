@@ -13,4 +13,4 @@ function binarySearch() {
 
 }
 
-modules.export = binarySearch;
+module.export = binarySearch;
