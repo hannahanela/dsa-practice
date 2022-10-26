@@ -4,9 +4,10 @@ const selectionSort = require("./selection")
 
 describe('selectionSort', function() {
   it('should exist', function() {
-      expect(typeof selectionSort).toBe(
-          'function',
-          "did you remember to define the 'selectionSort' function?");
+    expect(typeof selectionSort).toBe(
+      'function',
+      "did you remember to define the 'selectionSort' function?"
+    );
   });
 
   it('should sort numbers in descending order', function() {

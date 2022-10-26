@@ -12,17 +12,17 @@
 
 // Returns index of the biggest item in an array.
 function findIndexOfBiggest(arr) {
-    let biggest = arr[0];
-    let biggestIndex = 0;
+  let biggest = arr[0];
+  let biggestIndex = 0;
 
-    for (let i=0; i<arr.length; i++) {
-        if (arr[i] > biggest) {
-            biggest = arr[i];
-            biggestIndex = i;
-        }
+  for (let i=0; i<arr.length; i++) {
+    if (arr[i] > biggest) {
+      biggest = arr[i];
+      biggestIndex = i;
     }
+  }
 
-    return biggestIndex;
+  return biggestIndex;
 }
 
 
@@ -30,12 +30,12 @@ function selectionSort(arr) {
  let sortedArr = [];
  
  while (arr.length > 0) {
-    let indexOfBiggest = findIndexOfBiggest(arr);
-    sortedArr.push(arr[indexOfBiggest]);
-    arr.splice(indexOfBiggest, 1);
+  let indexOfBiggest = findIndexOfBiggest(arr);
+  sortedArr.push(arr[indexOfBiggest]);
+  arr.splice(indexOfBiggest, 1);
  }
 
- return sortedArr;
+  return sortedArr;
 }
 
 module.exports = selectionSort ;
