@@ -3,11 +3,11 @@
 /**
  * Quicksort Algorithm
  * 
- * O(n log n) runtime
+ * O(n log n) average runtime
  * 
  */
 
-// does not handle duplicates
+// does not handle duplicates; worst runtime O(n**2)
 function quicksort(arr) {
     if (arr.length < 2) return arr;
 
