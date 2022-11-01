@@ -5,37 +5,53 @@
  * 
  * O(n**2) runtime
  * 
- * Ex: Given a list of numbers, return the list sorted biggest to smallest.
- * 
  */
 
-
-// Returns index of the biggest item in an array.
-function findIndexOfBiggest(arr) {
-  let biggest = arr[0];
-  let biggestIndex = 0;
+function selectionSort(arr) {
+  let minIdx = 0;
 
   for (let i=0; i<arr.length; i++) {
-    if (arr[i] > biggest) {
-      biggest = arr[i];
-      biggestIndex = i;
+    for (let j=i+1; j<arr.length; j++) {
+      if (arr[j] < arr[minIdx]) {
+        minIdx = j;
+      }
     }
+    [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
+    minIdx = i+1;
   }
 
-  return biggestIndex;
+  return arr;
 }
 
+/**
+ * version with helper function for comparison.
+ */
 
-function selectionSort(arr) {
- let sortedArr = [];
+// Returns index of the biggest item in an array.
+// function findIndexOfBiggest(arr) {
+//   let biggest = arr[0];
+//   let biggestIndex = 0;
+
+//   for (let i=0; i<arr.length; i++) {
+//     if (arr[i] > biggest) {
+//       biggest = arr[i];
+//       biggestIndex = i;
+//     }
+//   }
+
+//   return biggestIndex;
+// }
+
+// function selectionSort(arr) {
+//  let sortedArr = [];
  
- while (arr.length > 0) {
-  let indexOfBiggest = findIndexOfBiggest(arr);
-  sortedArr.push(arr[indexOfBiggest]);
-  arr.splice(indexOfBiggest, 1);
- }
+//  while (arr.length > 0) {
+//   let indexOfBiggest = findIndexOfBiggest(arr);
+//   sortedArr.push(arr[indexOfBiggest]);
+//   arr.splice(indexOfBiggest, 1);
+//  }
 
-  return sortedArr;
-}
+//   return sortedArr;
+// }
 
-module.exports = selectionSort ;
+module.exports = selectionSort;
